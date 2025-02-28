@@ -1,0 +1,53 @@
+import java.util.Scanner;
+
+public class CurrencyConverter {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Display welcome message
+        System.out.println("Welcome to Currency Converter!");
+        
+        // Fixed exchange rates for conversion
+        double usdToInrRate = 83.0;  // 1 USD = 83 INR (example rate)
+        double eurToInrRate = 90.0;  // 1 EUR = 90 INR (example rate)
+        double gbpToInrRate = 102.0; // 1 GBP = 102 INR (example rate)
+
+        // Ask user for input
+        System.out.println("Choose the currency you want to convert from:");
+        System.out.println("1. USD");
+        System.out.println("2. EUR");
+        System.out.println("3. GBP");
+        System.out.print("Enter choice (1/2/3): ");
+        int choice = scanner.nextInt();
+
+        System.out.print("Enter amount to convert: ");
+        double amount = scanner.nextDouble();
+
+        double convertedAmount = 0.0;
+
+        switch (choice) {
+            case 1:
+                // Convert USD to INR
+                convertedAmount = amount * usdToInrRate;
+                System.out.println(amount + " USD is " + convertedAmount + " INR.");
+                break;
+            case 2:
+                // Convert EUR to INR
+                convertedAmount = amount * eurToInrRate;
+                System.out.println(amount + " EUR is " + convertedAmount + " INR.");
+                break;
+            case 3:
+                // Convert GBP to INR
+                convertedAmount = amount * gbpToInrRate;
+                System.out.println(amount + " GBP is " + convertedAmount + " INR.");
+                break;
+            default:
+                System.out.println("Invalid choice!");
+                break;
+        }
+
+        scanner.close();
+    }
+}
+
+
